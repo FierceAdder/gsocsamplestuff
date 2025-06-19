@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+body {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+}
+
+/* Custom Calendar Styles */
+.calendar-day {
+  @apply p-3 rounded-lg text-center text-sm font-medium border border-transparent min-h-[3rem] flex flex-col items-center justify-center transition-all duration-300;
+}
+
+.calendar-day.other-month {
+  @apply text-slate-300;
+}
+
+.calendar-day.has-tasks {
+  @apply bg-slate-50 border-slate-200 hover:bg-slate-100;
+}
+
+.calendar-day.has-completed {
+  @apply bg-emerald-50 border-emerald-200 hover:bg-emerald-100;
+}
+
+.calendar-day.selected {
+  @apply bg-slate-800 text-white border-slate-800 shadow-lg;
+}
+
+/* Smooth animations */
+.group:hover .group-hover\:opacity-100 {
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-slate-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-400 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-slate-500;
+}
+
+/* Better focus styles */
+button:focus,
+input:focus {
+  @apply outline-none ring-2 ring-slate-500 ring-opacity-50;
+}
+
+/* Gradient text fix for better browser support */
+.bg-clip-text {
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+/* Professional color overrides */
+.text-blue-600 { @apply text-slate-600; }
+.text-green-600 { @apply text-emerald-600; }
+.text-purple-600 { @apply text-slate-700; }
+.text-orange-600 { @apply text-amber-600; }
+
+.bg-blue-100 { @apply bg-slate-100; }
+.bg-green-100 { @apply bg-emerald-100; }
+.bg-purple-100 { @apply bg-slate-100; }
+.bg-orange-100 { @apply bg-amber-100; }
+
+.bg-blue-600 { @apply bg-slate-600; }
+.bg-green-600 { @apply bg-emerald-600; }
+.bg-purple-600 { @apply bg-slate-700; }
+.bg-orange-600 { @apply bg-amber-600; }
+
+.text-blue-800 { @apply text-slate-800; }
+.text-green-800 { @apply text-emerald-800; }
+.text-purple-800 { @apply text-slate-900; }
+.text-orange-800 { @apply text-amber-800; }
